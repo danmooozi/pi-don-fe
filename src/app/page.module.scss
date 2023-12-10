@@ -1,0 +1,34 @@
+.main {
+  background-color: #0D1116;
+  height: 812px;
+  width: 375px;
+  color: var(--gray-30);
+
+  &__background {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    padding-top: 7.812rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__year {
+      position: relative;
+    }
+
+    & > p {
+      font-size: 3.572rem
+    }
+  }
+}
