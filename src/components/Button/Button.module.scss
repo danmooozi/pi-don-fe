@@ -1,11 +1,20 @@
 .Button {
-    width: 21.375rem;
-    height: 3.75rem;
-    border-radius: 1rem;
-    font-size: 1.125rem;
-    font-weight: 600;
-    font-family: "Pretendard Variable", Pretendard;
-    background-color: #00a881;
-    color: white;
-    border: none;
+  width: 21.375rem;
+  height: 3.75rem;
+  border-radius: 1rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  font-family: "Pretendard Variable", Pretendard;
+  background-color: #00a881;
+  color: white;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #2c6a5b;
+  }
+
+  &:active {
+    background-color: #064c3c;
+  }
 }
