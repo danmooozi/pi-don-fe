@@ -1,0 +1,26 @@
+name: Deploy to Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up SSH
+      run: |
+        mkdir -p ~/.ssh/
+        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -t rsa ${{ secrets.SERVER_IP_ADDRESS }} >> ~/.ssh/known_hosts
+
+    - name: Deploy to Server
+      run: |
+        ssh -i ~/.ssh/id_rsa ubuntu@${{ secrets.SERVER_IP_ADDRESS }} "cd /home/ubuntu/pi-don-fe && npm run build && npm run start"
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
