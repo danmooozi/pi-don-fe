@@ -1,3 +1,5 @@
+"use client";
+import { signIn } from "next-auth/react";
 import Image from "next/image";
 import Button from "@/components/Button";
 
@@ -46,7 +48,7 @@ export default function Page() {
             />
           </div>
         </span>
-        <Button className={styles.main__button}>깃허브 로그인하기</Button>
+        <Button className={styles.main__button} onClick={() => signIn("github")}>깃허브 로그인하기</Button>
       </div>
     </main>
   );
