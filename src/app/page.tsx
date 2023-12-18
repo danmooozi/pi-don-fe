@@ -1,12 +1,12 @@
 import { getServerSession } from 'next-auth/next';
 import { authOptions } from './api/auth/[...nextauth]/options';
-import Loading from '@/app/loading/page';
+import Login from '@/app/login/page';
 
 export default async function Home() {
   const session = await getServerSession(authOptions);
 
   if (!session) {
-    return <Loading />;
+    return <Login />;
   }
 
   return (
