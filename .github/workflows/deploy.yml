@@ -19,13 +19,13 @@ jobs:
         username: ${{ secrets.SSH_USERNAME}}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: ${{ secrets.SSH_PORT }}
-      script: |
-        cd /home/ubuntu/pi-don-fe
-        npm run build
-        npm run start
-      run: |
-        mkdir -p ~/.ssh/
-        echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
-        ssh-keyscan -t rsa ${{ secrets.SERVER_IP_ADDRESS }} >> ~/.ssh/known_hosts
-        
+        script: |
+          cd /home/ubuntu/pi-don-fe
+          npm run build
+          npm run start
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -t rsa ${{ secrets.SERVER_IP_ADDRESS }} >> ~/.ssh/known_hosts
+
