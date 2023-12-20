@@ -12,21 +12,38 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20' 
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build
+      run: npm run build
+
+    - name: Compress build artifacts
+      run: tar -czf next-build.tar.gz .next package.json node_modules public 
     - name: Set up SSH key
       run: |
         mkdir -p ~/.ssh/
         echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
-        
+
     - name: Scan for SSH keys
       run: ssh-keyscan -v -t rsa ${{ secrets.SERVER_IP_ADDRESS }} >> ~/.ssh/known_hosts
 
     - name: Deploy to server
       run: |
+        scp -P ${{ secrets.SSH_PORT }} next-build.tar.gz ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP_ADDRESS }}:/home/ubuntu/pi-don-fe
         ssh -v -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP_ADDRESS }} << 'ENDSSH'
           cd /home/ubuntu/pi-don-fe
-          git checkout main
           git pull origin main
+          tar -xzf next-build.tar.gz
+          npm install --production
+          forever restart 0
         ENDSSH
+
 
 
