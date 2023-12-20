@@ -27,8 +27,8 @@ jobs:
           cd /home/ubuntu/pi-don-fe
           git checkout main
           git pull origin main
+          npm ci
           npm run build
-          npm run start
           forever restart 0
         ENDSSH
 
