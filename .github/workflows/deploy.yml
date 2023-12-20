@@ -12,5 +12,17 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: execute remote ssh & deploy FE to server
-      uses: appleboy/ssh-action@master
+    - name: Set up SSH key
+      run: |
+        mkdir -p ~/.ssh/
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -t rsa ${{ secrets.SERVER_IP_ADDRESS }} >> ~/.ssh/known_hosts
+
+    - name: Deploy to server
+      run: |
+        ssh -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP_ADDRESS }} << 'ENDSSH'
+          cd /home/ubuntu/pi-don-fe
+          npm run build
+          npm run start
+        ENDSSH
