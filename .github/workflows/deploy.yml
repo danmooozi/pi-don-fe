@@ -36,8 +36,9 @@ jobs:
 
     - name: Deploy to server
       run: |
-        scp -P ${{ secrets.SSH_PORT }} next-build.tar.gz ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP_ADDRESS }}:/home/ubuntu/pi-don-fe
+        scp -P ${{ secrets.SSH_PORT }} next-build.tar.gz ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP_ADDRESS }}:~
         ssh -v -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP_ADDRESS }} << 'ENDSSH'
+          mv ~/next-build.tar.gz /home/***/pi-don-fe/
           cd /home/ubuntu/pi-don-fe
           git pull origin main
           tar -xzf next-build.tar.gz
