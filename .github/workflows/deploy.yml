@@ -43,6 +43,7 @@ jobs:
           cd /home/ubuntu/pi-don-fe
           git pull origin main
           tar -xzf next-build.tar.gz
+          rm next-build.tar.gz
           npm install --production
           forever restart 0
         ENDSSH
