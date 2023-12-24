@@ -47,7 +47,7 @@ export default function Page() {
           />
         </div>
       </span>
-      <Button className={styles.login__button} onClick={() => signIn('github')}>
+      <Button className={styles.login__button} onClick={() => signIn('github',{ callbackUrl:`${window.location.origin}/api/vi/callback` })}>
         깃허브 로그인하기
       </Button>
     </div>
