@@ -1,0 +1,33 @@
+.detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  overflow-y: auto;
+  padding: 3rem 1rem;
+  gap: 1.5rem;
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+
+  &__mbti {
+    font-size: 6rem;
+    color: #13c299;
+    line-height: 1.2;
+  }
+}
+
+.detailButton {
+  background-color: transparent;
+}
+
+.detailButton:hover {
+  background-color: transparent;
+}
