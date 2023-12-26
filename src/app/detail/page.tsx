@@ -2,7 +2,6 @@
 import { Potta_One, Poor_Story } from 'next/font/google';
 import cx from 'classnames';
 import useUserStore from '@/stores/user';
-import Card from '@/components/Card';
 import styles from './detail.module.scss';
 import Button from '@/components/Button';
 import { useState } from 'react';
@@ -62,7 +61,6 @@ export default function Page() {
         </p>
         <p className={cx(styles.detail__mbti, pottaOne.className)}>{mbti}</p>
       </div>
-      <Card>hi</Card>
       {!isOpen ? (
         <Button className={styles.detailButton} onClick={() => setIsOpen(true)}>
           <p className={poorStory.className}>더 자세히 살펴보기</p>

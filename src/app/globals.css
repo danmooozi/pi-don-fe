@@ -21,8 +21,9 @@ body {
   overflow-x: hidden;
   background-color: #0d1116;
   width: 100vw;
+  height: 100vh;
   color: var(--gray-30);
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 body {
