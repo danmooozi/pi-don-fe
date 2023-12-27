@@ -45,7 +45,7 @@ jobs:
           tar -xzf next-build.tar.gz
           rm next-build.tar.gz
           npm install --production
-          forever restart 0
+          pm2 restart fe
         ENDSSH
 
 
