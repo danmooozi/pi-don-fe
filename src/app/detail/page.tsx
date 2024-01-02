@@ -8,6 +8,7 @@ import { useEffect, useState, useRef } from 'react';
 import MBTICards from '@/components/MBTICards';
 import Card from '@/components/Card';
 import LanguageCard from './components/LanguageCard';
+import CommitCountCard from './components/CommitCountCard';
 
 const pottaOne = Potta_One({ weight: '400', subsets: ['latin'] });
 const poorStory = Poor_Story({ weight: '400', subsets: ['latin'] });
@@ -100,14 +101,15 @@ export default function Page() {
               <h2>card 1</h2>
             </Card>
             {/* 총 커밋 개수 카드 */}
-            <Card
+            <CommitCountCard
               className={styles.card}
               ref={(element) => {
                 refs.current[1] = element;
               }}
-            >
-              <h2>card 2</h2>
-            </Card>
+              count={15222}
+              isMore={true}
+            />
+
             {/* 주로 커밋한 날 카드 */}
             <Card
               className={styles.card}

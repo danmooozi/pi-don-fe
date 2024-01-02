@@ -1,0 +1,35 @@
+.card {
+  padding: 2.5rem 2.75rem;
+  font-family: 'Pretendard Variable', Pretendard;
+  align-items: center;
+  > p {
+    color: #8fa6c7;
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+  > h3 {
+    color: #13c299;
+    font-size: 3rem;
+    font-weight: 700;
+  }
+}
+
+.icon {
+  margin-top: 3.2rem;
+  margin-bottom: 2rem;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  p {
+    color: #8ea1b9;
+    font-size: 1.125rem;
+    font-weight: 500;
+    > span {
+      color: #13c299;
+      font-weight: 700;
+    }
+  }
+}
