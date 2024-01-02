@@ -7,6 +7,8 @@ import Button from '@/components/Button';
 import { useEffect, useState, useRef } from 'react';
 import MBTICards from '@/components/MBTICards';
 import Card from '@/components/Card';
+import LanguageCard from './components/LanguageCard';
+
 const pottaOne = Potta_One({ weight: '400', subsets: ['latin'] });
 const poorStory = Poor_Story({ weight: '400', subsets: ['latin'] });
 
@@ -54,6 +56,7 @@ export default function Page() {
 
   const updateStyle = () => {
     const headerHeight = 16;
+
     if (refs.current && refs.current.length) {
       refs.current.map((card, i) => {
         const incValue = i * headerHeight;
@@ -125,14 +128,13 @@ export default function Page() {
               <h2>card 4</h2>
             </Card>
             {/* 자주 사용하는 언어 카드 */}
-            <Card
+            <LanguageCard
               className={styles.card}
               ref={(element) => {
                 refs.current[4] = element;
               }}
-            >
-              <h2>card 5</h2>
-            </Card>
+              languages={['Typescript', 'Javascript', 'HTML']}
+            />
             {/* 나와 많이 소통한 커밋터 카드 */}
             <Card
               className={styles.card}
