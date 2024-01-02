@@ -1,0 +1,96 @@
+.card {
+  padding: 2.5rem 2.75rem;
+  font-family: 'Pretendard Variable', Pretendard;
+  > p {
+    color: #8fa6c7;
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+  > h3 {
+    color: #13c299;
+    font-size: 3rem;
+    font-weight: 700;
+  }
+}
+
+.description {
+  position: relative;
+  margin-top: 2.94rem;
+
+  .ellipse1Wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .ellipse1 {
+    position: relative;
+    &_text {
+      position: absolute;
+      color: #00cb9c;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      h5 {
+        font-size: 1.375rem;
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+      }
+      p {
+        font-size: 1.25rem;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .ellipse2Wrapper {
+    position: absolute;
+    top: 4.8rem;
+    right: 1.1rem;
+  }
+
+  .ellipse2 {
+    position: relative;
+    &_text {
+      position: absolute;
+      color: #00a881;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      h5 {
+        font-size: 1.125rem;
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+      }
+      p {
+        font-size: 1.125rem;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .ellipse3Wrapper {
+    position: absolute;
+    top: 8.75rem;
+    left: 3.3rem;
+  }
+
+  .ellipse3 {
+    position: relative;
+    &_text {
+      position: absolute;
+      color: #00a881;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1rem;
+      h5 {
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+      }
+      p {
+        font-weight: 500;
+      }
+    }
+  }
+}

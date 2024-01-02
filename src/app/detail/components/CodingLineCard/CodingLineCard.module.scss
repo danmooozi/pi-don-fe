@@ -1,0 +1,57 @@
+.card {
+  padding: 2.5rem 2.75rem;
+  font-family: 'Pretendard Variable', Pretendard;
+  align-items: center;
+  > p {
+    color: #8fa6c7;
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+  > h3 {
+    color: #13c299;
+    font-size: 3rem;
+    font-weight: 700;
+  }
+}
+
+.description {
+  margin-top: 5.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    p {
+      color: #dce8f8;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+    h4 {
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+  }
+  &_plus {
+    h4 {
+      color: transparent;
+      background:
+        url('/background_green.png'),
+        linear-gradient(#13c299, #13c29900) 0% 0% / 100px 100px repeat;
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+  }
+
+  &_minus {
+    h4 {
+      color: transparent;
+      background:
+        url('/background_orange.png'),
+        linear-gradient(#ffaa00, #e5990000) 0% 0% / 100px 100px repeat;
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+  }
+}
