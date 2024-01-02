@@ -46,7 +46,7 @@ function MBTICards({ slides }: PropType) {
   }, [emblaApi, onInit, onSelect]);
 
   return (
-    <>
+    <div className={styles.container}>
       <div className={styles.embla} ref={viewportRef}>
         <div className={styles.embla__container}>
           {slides.map((slide, idx) => {
@@ -89,7 +89,7 @@ function MBTICards({ slides }: PropType) {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
