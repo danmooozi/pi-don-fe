@@ -9,6 +9,7 @@ import MBTICards from '@/components/MBTICards';
 import Card from '@/components/Card';
 import LanguageCard from './components/LanguageCard';
 import CommitCountCard from './components/CommitCountCard';
+import CodingLineCard from './components/CodingLineCard/CodingLineCard';
 
 const pottaOne = Potta_One({ weight: '400', subsets: ['latin'] });
 const poorStory = Poor_Story({ weight: '400', subsets: ['latin'] });
@@ -121,14 +122,14 @@ export default function Page() {
             </Card>
 
             {/* 코딩 라인 수 카드 */}
-            <Card
+            <CodingLineCard
               className={styles.card}
               ref={(element) => {
                 refs.current[3] = element;
               }}
-            >
-              <h2>card 4</h2>
-            </Card>
+              lines={{ total: 21450, minus: 15050, plus: 23000 }}
+            />
+
             {/* 자주 사용하는 언어 카드 */}
             <LanguageCard
               className={styles.card}
