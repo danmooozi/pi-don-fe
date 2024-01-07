@@ -25,6 +25,7 @@ export default function Page() {
               alt="title"
               width={265}
               height={170}
+              priority
             />
             <Image
               src="/index_0line.svg"
