@@ -1,0 +1,44 @@
+.GoodWorstCard {
+  align-items: center;
+  padding: 2rem 2.5rem;
+  gap: 2.5rem;
+  font-family: 'Pretendard Variable', Pretendard;
+
+  &__desc {
+    font-size: 1.25rem;
+    line-height: 2;
+    font-weight: 400;
+  }
+
+  &__types {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 15.812rem;
+
+    &--good {
+      color: #008d6d;
+    }
+
+    &--bad {
+      color: #ffb700;
+    }
+
+    &__type {
+      display: flex;
+      align-items: center;
+      gap: 0.109rem;
+      font-weight: 500;
+    }
+
+    &__mbti {
+      font-size: 2rem;
+    }
+  }
+}
