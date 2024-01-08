@@ -7,6 +7,7 @@ import Button from '@/components/Button';
 import { useEffect, useState, useRef } from 'react';
 import MBTICards from '@/components/MBTICards';
 import Card from '@/components/Card';
+import FollowCard from './components/FollwCard';
 import LanguageCard from './components/LanguageCard';
 import CommitCountCard from './components/CommitCountCard';
 import CodingLineCard from './components/CodingLineCard/CodingLineCard';
@@ -93,14 +94,11 @@ export default function Page() {
 
           <section className={styles.cards_scroll}>
             {/* 팔로워/팔로잉 카드 */}
-            <Card
-              className={styles.card}
+            <FollowCard
               ref={(element) => {
                 refs.current[0] = element;
               }}
-            >
-              <h2>card 1</h2>
-            </Card>
+            />
             {/* 총 커밋 개수 카드 */}
             <CommitCountCard
               className={styles.card}
