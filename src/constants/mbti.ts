@@ -1,4 +1,6 @@
-const MBTI = {
+import { MbtiType, SynergyMap } from '@/types/mbti';
+
+const MBTI: Record<MbtiType, MbtiType> = {
   INFP: 'INFP',
   INFJ: 'INFJ',
   INTP: 'INTP',
@@ -17,69 +19,85 @@ const MBTI = {
   ESTJ: 'ESTJ',
 } as const;
 
-export const synergy = {
-  [MBTI.INFP]: {
+export const synergy: SynergyMap = {
+  INFP: {
     good: MBTI.ENFJ,
     bad: MBTI.ISTJ,
+    desc: '팔로잉, 팔로워는 많이 없지만, 풍부한 상상력을 기반으로 들쭉날쭉한 커밋을 하시는 타입이시네요!',
   },
-  [MBTI.INFJ]: {
+  INFJ: {
     good: MBTI.ENFP,
     bad: MBTI.ESTJ,
+    desc: '팔로잉, 팔로워는 많이 없지만, 풍부한 상상력을 기반으로 들쭉날쭉한 커밋을 하시는 타입이시네요!',
   },
-  [MBTI.INTP]: {
+  INTP: {
     good: MBTI.ENTJ,
     bad: MBTI.ISFJ,
+    desc: '팔로잉, 팔로워는 많이 없지만, 풍부한 상상력을 기반으로 들쭉날쭉한 커밋을 하시는 타입이시네요!',
   },
-  [MBTI.INTJ]: {
+  INTJ: {
     good: MBTI.ENTP,
     bad: MBTI.ISTJ,
+    desc: '팔로잉, 팔로워는 많이 없지만, 풍부한 상상력을 기반으로 들쭉날쭉한 커밋을 하시는 타입이시네요!',
   },
-  [MBTI.ISFP]: {
+  ISFP: {
     good: MBTI.ESFJ,
     bad: MBTI.INFJ,
+    desc: '팔로잉, 팔로워는 많이 없지만, 풍부한 상상력을 기반으로 들쭉날쭉한 커밋을 하시는 타입이시네요!',
   },
-  [MBTI.ISFJ]: {
+  ISFJ: {
     good: MBTI.ESTP,
     bad: MBTI.ENFJ,
+    desc: '팔로잉, 팔로워는 많이 없지만, 풍부한 상상력을 기반으로 들쭉날쭉한 커밋을 하시는 타입이시네요!',
   },
-  [MBTI.ISTP]: {
+  ISTP: {
     good: MBTI.ESTJ,
     bad: MBTI.INFP,
+    desc: '팔로잉, 팔로워는 많이 없지만, 풍부한 상상력을 기반으로 들쭉날쭉한 커밋을 하시는 타입이시네요!',
   },
-  [MBTI.ISTJ]: {
+  ISTJ: {
     good: MBTI.ESFP,
     bad: MBTI.ENFP,
+    desc: '팔로잉, 팔로워는 많이 없지만, 풍부한 상상력을 기반으로 들쭉날쭉한 커밋을 하시는 타입이시네요!',
   },
-  [MBTI.ENFP]: {
+  ENFP: {
     good: MBTI.INTJ,
     bad: MBTI.ISTJ,
+    desc: '팔로잉, 팔로워는 많이 없지만, 풍부한 상상력을 기반으로 들쭉날쭉한 커밋을 하시는 타입이시네요!',
   },
-  [MBTI.ENFJ]: {
+  ENFJ: {
     good: MBTI.INFP,
     bad: MBTI.ISFJ,
+    desc: '팔로잉, 팔로워는 많이 없지만, 풍부한 상상력을 기반으로 들쭉날쭉한 커밋을 하시는 타입이시네요!',
   },
-  [MBTI.ENTP]: {
+  ENTP: {
     good: MBTI.INTJ,
     bad: MBTI.ESTJ,
+    desc: '팔로잉, 팔로워는 많이 없지만, 풍부한 상상력을 기반으로 들쭉날쭉한 커밋을 하시는 타입이시네요!',
   },
-  [MBTI.ENTJ]: {
+  ENTJ: {
     good: MBTI.INTP,
     bad: MBTI.ESFJ,
+    desc: '팔로잉, 팔로워는 많이 없지만, 풍부한 상상력을 기반으로 들쭉날쭉한 커밋을 하시는 타입이시네요!',
   },
-  [MBTI.ESFP]: {
+  ESFP: {
     good: MBTI.ISTJ,
     bad: MBTI.ENFJ,
+    desc: '팔로잉, 팔로워는 많이 없지만, 풍부한 상상력을 기반으로 들쭉날쭉한 커밋을 하시는 타입이시네요!',
   },
-  [MBTI.ESFJ]: {
+  ESFJ: {
     good: MBTI.ISFP,
     bad: MBTI.ENTJ,
+    desc: '팔로잉, 팔로워는 많이 없지만, 풍부한 상상력을 기반으로 들쭉날쭉한 커밋을 하시는 타입이시네요!',
   },
-  [MBTI.ESTP]: {
+  ESTP: {
     good: MBTI.ISFJ,
     bad: MBTI.ENFP,
+    desc: '팔로잉, 팔로워는 많이 없지만, 풍부한 상상력을 기반으로 들쭉날쭉한 커밋을 하시는 타입이시네요!',
   },
-  [MBTI.ESTJ]: {
+  ESTJ: {
     good: MBTI.ISTP,
     bad: MBTI.ENTP,
+    desc: '팔로잉, 팔로워는 많이 없지만, 풍부한 상상력을 기반으로 들쭉날쭉한 커밋을 하시는 타입이시네요!',
   },
-} as const;
+};

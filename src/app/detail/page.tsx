@@ -9,7 +9,8 @@ import MBTICards from '@/components/MBTICards';
 import Card from '@/components/Card';
 import LanguageCard from './components/LanguageCard';
 import CommitCountCard from './components/CommitCountCard';
-import CodingLineCard from './components/CodingLineCard/CodingLineCard';
+import CodingLineCard from './components/CodingLineCard';
+import GoodWorstCard from './components/GoodWorstCard';
 
 const pottaOne = Potta_One({ weight: '400', subsets: ['latin'] });
 const poorStory = Poor_Story({ weight: '400', subsets: ['latin'] });
@@ -83,6 +84,7 @@ export default function Page() {
         </p>
         <p className={cx(styles.detail__mbti, pottaOne.className)}>{mbti}</p>
       </div>
+      <GoodWorstCard />
       {!isOpen ? (
         <Button className={styles.detailButton} onClick={() => setIsOpen(true)}>
           <p className={poorStory.className}>더 자세히 살펴보기</p>
